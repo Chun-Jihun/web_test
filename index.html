@@ -207,7 +207,13 @@
                         </table>
 
                         <py-script>
-                            !pip install transformers
+                            import subprocess
+                            import sys
+
+                            def install(package):
+                                subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+                            install('transformers')
                         </py-script>
 
                         <div id="F_title">
